@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .email-header {
+            background-color: #6a1b9a;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .email-header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .email-content {
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .email-content h2 {
+            color: #6a1b9a;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .order-details {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .order-details p {
+            margin: 0;
+            font-size: 16px;
+        }
+        .order-details strong {
+            color: #333;
+        }
+        .footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            color: #777;
+            background-color: #f4f4f4;
+        }
+        .button {
+            display: inline-block;
+            background-color: #6a1b9a;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #4a148c;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <h1>Order Confirmation</h1>
+        </div>
+        <div class="email-content">
+            <h2>Thank you for your purchase, {{ user.username }}!</h2>
+            <p>Your order has been successfully processed, and we are excited to serve you.</p>
+            <div class="order-details">
+                <p><strong>Products:</strong> {{ product_name|join:", " }}</p>
+                <p><strong>Paid Amount:</strong> ${{ paid_amount }}</p>
+                <p><strong>Payment Time:</strong> {{ paid_time }}</p>
+            </div>
+            <p>If you have any questions, please feel free to reply to this email or <a href="https://example.com/contact" style="color: #6a1b9a; text-decoration: underline;">contact us</a>.</p>
+            <a href="https://example.com/orders/{{ order_id }}" class="button">View Order Details</a>
+        </div>
+        <div class="footer">
+            &copy; {{ current_year }} Your Company. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+
+""""
+
+POST / api/cart-items/
+
+{
+    "product_id": 1,
+    "quantity": 2
+}
+
+
+check out : 
+    
+{
+    "user":7,
+    "cart":1
+}
+"""
+
+admin password: 
+
+admin - meraz2004
+
+
+auth: 
+
+api/auth/register/
+api/auth/verify-email/
+api/auth/login/
+api/auth/logout/
+api/auth/profile/update/
+api/auth/send-otp/
+api/auth/reset-password/
+api/auth/verified-users/
+
+
+
